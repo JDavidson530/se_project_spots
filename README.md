@@ -10,7 +10,7 @@ While doing this project I would utilize the videos attached to the site to help
 
 ### Link to deployed project on GitHub
 
-git@github.com:JDavidson530/se_project_spots.git
+[git@github.com:JDavidson530/se_project_spots.git](https://jdavidson530.github.io/se_project_spots/)
 
 ### Link to Project Pitch Video
 

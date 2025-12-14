@@ -12,12 +12,17 @@
 }
 
 .card__content {
+    margin-top: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .card__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 250px;
     margin: 0;
     font-size: 20px;
     line-height: 1.2;
@@ -33,7 +38,7 @@
 }
 
 .card__like-button {
-    background-image: url(../images/Heart.svg);
+    background-image: url(../images/black-heart.svg);
     width: 23px;
     height: 20px;
     border: none;
@@ -42,6 +47,11 @@
 }
 
 @media screen and (max-width: 627px) {
+    .card__title {
+        max-width: 250px;
+        font-size: 16px;
+    }
+
     .card__image {
         height: 288px;
     }
