@@ -17,7 +17,7 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 const addCardFormElement = document
     .querySelector("#new-post-modal")
     .querySelector(".modal__form");
-const nameInput = addCardFormElement.querySelector(
+const captionInput = addCardFormElement.querySelector(
     "#profile-description-input"
 );
 const linkInput = addCardFormElement.querySelector("#profile-image-input");
