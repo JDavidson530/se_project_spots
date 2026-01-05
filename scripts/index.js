@@ -17,9 +17,7 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 const addCardFormElement = document
     .querySelector("#new-post-modal")
     .querySelector(".modal__form");
-const captionInput = addCardFormElement.querySelector(
-    "#profile-description-input"
-);
+const captionInput = addCardFormElement.querySelector("#card-caption-input");
 const linkInput = addCardFormElement.querySelector("#profile-image-input");
 
 editProfileBtn.addEventListener("click", function () {
