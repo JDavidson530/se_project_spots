@@ -50,7 +50,7 @@ function handleEditProfileSubmit(evt) {
 function handleAddCardSubmit(evt) {
     evt.preventDefault();
     console.log(linkInput.value);
-    console.log(nameInput.value);
+    console.log(captionInput.value);
     newPostModal.classList.remove("modal_is-opened");
 }
 
