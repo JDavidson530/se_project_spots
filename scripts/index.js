@@ -55,6 +55,11 @@ const previewModal = document.querySelector("#image-modal");
 const previewModalCloseBtn = previewModal.querySelector(
     ".modal__close_type_image-preview",
 );
+
+previewModalCloseBtn.addEventListener("click", () => {
+    closeModal(previewModal);
+});
+
 const previewImageEl = previewModal.querySelector(".modal__image");
 
 const cardTemplate = document.querySelector("#card-template");
@@ -73,7 +78,7 @@ function getCardElement(data) {
 
     const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
     cardLikeBtnEl.addEventListener("click", () => {
-        cardLikeBtnEl.classList.toggle(".card__like-button_active");
+        cardLikeBtnEl.classList.toggle("card__like-button-active");
     });
 
     const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
@@ -113,7 +118,7 @@ editProfileCloseBtn.addEventListener("click", function () {
 
 newPostBtn.addEventListener("click", function () {
     newPostModal.classList.add("modal_is-opened");
-    openModal(editProfileModal);
+    openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
@@ -149,5 +154,5 @@ initialCards.forEach(function (item) {
     console.log(item.name);
     console.log(item.link);
     const cardElement = getCardElement(item);
-    cardList.append(cardElement);
+    cardList.prepend(cardElement);
 });
