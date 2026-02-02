@@ -142,8 +142,8 @@ function handleAddCardSubmit(evt) {
         link: linkInput.value,
     });
     cardList.prepend(cardElement);
+    addCardFormElement.requestFullscreen();
 
-    newPostModal.classList.remove("modal_is-opened");
     closeModal(editProfileModal);
 }
 
