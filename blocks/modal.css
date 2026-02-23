@@ -86,6 +86,10 @@
     color: #212121;
 }
 
+.modal__input_state_error {
+    border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
 .modal__input::placeholder {
     color: #212121;
 }
