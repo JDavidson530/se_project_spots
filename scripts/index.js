@@ -97,11 +97,11 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
-    modal.classList.add("modal-is-opened");
+    modal.classList.add("modal__is-opened");
 }
 
 function closeModal(modal) {
-    modal.classList.remove("modal-is-opened");
+    modal.classList.remove("modal__is-opened");
 }
 
 editProfileBtn.addEventListener("click", function () {
@@ -123,7 +123,7 @@ newPostBtn.addEventListener("click", function () {
 
 newPostCloseBtn.addEventListener("click", function () {
     newPostModal.classList.remove("modal_is-opened");
-    closeModal(editProfileModal);
+    closeModal(newPostModal);
 });
 
 function handleEditProfileSubmit(evt) {
@@ -142,17 +142,15 @@ function handleAddCardSubmit(evt) {
         link: linkInput.value,
     });
     cardList.prepend(cardElement);
-    addCardFormElement.requestFullscreen();
+    addCardFormElement.reset();
 
-    closeModal(editProfileModal);
+    closeModal(newPostModal);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-    console.log(item.name);
-    console.log(item.link);
     const cardElement = getCardElement(item);
     cardList.prepend(cardElement);
 });

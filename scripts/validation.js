@@ -29,6 +29,8 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (inputList, buttonEl) => {
     if (hasInvalidInput(inputList)) {
         buttonEl.disabled = true;
+    } else {
+        buttonEl.disabled = false;
     }
 };
 
@@ -38,7 +40,7 @@ const disabledButton = (buttonEl) => {
 
 const setEventListners = (formEl) => {
     const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
-    const buttonElement = formEl.querySelector(".modal__button");
+    const buttonElement = formEl.querySelector(".submit-button");
 
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", function () {
