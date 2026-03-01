@@ -1,25 +1,39 @@
 const showInputError = (formEl, inputEl, errorMsg) => {
     const errorMsgID = inputEl.id + "-error";
-    const errorMsgEl = document.querySelector("#" + errorMsgID);
+    const errorMsgEl = formEl.querySelector("#" + errorMsgID);
     errorMsgEl.textContent = errorMsg;
-    inputEl.classlist.add("modal__input_state_error");
+    inputEl.classList.add("modal__input_state_error");
 };
 
 const hideInputError = (formEl, inputEl) => {
     const errorMsgID = inputEl.id + "-error";
-    const errorMsgEl = document.querySelector("#" + errorMsgID);
+    const errorMsgEl = formEl.querySelector("#" + errorMsgID);
     errorMsgEl.textContent = "";
-    inputEl.classlist.remove("modal__input_state_error");
+    inputEl.classList.remove("modal__input_state_error");
 };
 
 const checkInputValidity = (formEl, inputEl) => {
     if (!inputEl.validity.valid) {
         showInputError(formEl, inputEl, inputEl.validationMessage);
     } else {
-        hideInputError(formElement, inputElement);
-        const errorMsgEl = document.querySelector("#" + inputEl.id + "-error");
-        errorMsg.textContent = "";
+        hideInputError(formEl, inputEl);
     }
+};
+
+const hasInvalidInput = (inputList) => {
+    return inputList.some((input) => {
+        return !input.validity.valid;
+    });
+};
+
+const toggleButtonState = (inputList, buttonEl) => {
+    if (hasInvalidInput(inputList)) {
+        buttonEl.disabled = true;
+    }
+};
+
+const disabledButton = (buttonEl) => {
+    buttonEl.disabled = true;
 };
 
 const setEventListners = (formEl) => {

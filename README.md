@@ -14,4 +14,4 @@ While doing this project I would utilize the videos attached to the site to help
 
 ### Link to Project Pitch Video
 
-https://drive.google.com/file/d/1LuzKXunmRDQbVcLP80CZXCdSzqiekmks/view?usp=sharing Check out this link, where I describe my project and some challenges I faced while building it.
+https://www.loom.com/share/53dfefe72a1e42bc990719933957bc7e Check out this link, where I describe my project and some challenges I faced while building it.
