@@ -40,7 +40,7 @@ const disabledButton = (buttonEl) => {
 
 const setEventListners = (formEl) => {
     const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
-    const buttonElement = formEl.querySelector(".submit-button");
+    const buttonElement = formEl.querySelector(".submit-btn");
 
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", function () {
