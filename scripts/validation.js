@@ -29,8 +29,10 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (inputList, buttonEl) => {
     if (hasInvalidInput(inputList)) {
         buttonEl.disabled = true;
+        buttonEl.classList.add("modal__submit-btn_disabled");
     } else {
         buttonEl.disabled = false;
+        buttonEl.classList.remove("modal__submit-btn_disabled");
     }
 };
 
@@ -40,7 +42,7 @@ const disabledButton = (buttonEl) => {
 
 const setEventListners = (formEl) => {
     const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
-    const buttonElement = formEl.querySelector(".submit-btn");
+    const buttonElement = formEl.querySelector(".modal__submit-btn");
 
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", function () {
@@ -72,6 +74,14 @@ function openModal(modal) {
 function closeModal(modal) {
     modal.classList.remove("modal_is-opened");
     document.removeEventListener("keyup", handleEscape);
+}
+
+function resetValidation(formEl) {
+    const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
+
+    inputList.forEach((inputEl) => {
+        hideInputError(formEl, inputEl);
+    });
 }
 
 enableValidation();
