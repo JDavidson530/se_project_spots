@@ -28,6 +28,10 @@
     transition-delay: 0s;
 }
 
+.modal__image-container {
+    position: relative;
+}
+
 .modal__container {
     max-width: 703px;
     width: 100%;
