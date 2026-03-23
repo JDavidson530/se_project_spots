@@ -104,7 +104,7 @@
     margin-top: 8px;
 }
 
-.submit-btn {
+.modal__submit-btn {
     max-width: 156px;
     width: 156px;
     height: 52px;
@@ -119,6 +119,10 @@
     background-color: black;
     color: white;
     cursor: pointer;
+}
+.modal__close-btn_type_image-preview {
+    top: 0;
+    right: -40px;
 }
 
 .submit-btn:hover {
