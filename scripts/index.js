@@ -53,7 +53,7 @@ const linkInput = addCardFormElement.querySelector("#profile-image-input");
 
 const previewModal = document.querySelector("#image-modal");
 const previewModalCloseBtn = previewModal.querySelector(
-    ".modal__close_type_image-preview",
+    ".modal__close-btn_type_image-preview",
 );
 
 previewModalCloseBtn.addEventListener("click", () => {
