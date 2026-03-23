@@ -124,6 +124,30 @@ newPostCloseBtn.addEventListener("click", function () {
     closeModal(newPostModal);
 });
 
+editProfileModal.addEventListener("click", function (event) {
+    if (event.target === editProfileModal) {
+        closeModal(editProfileModal);
+    }
+});
+
+newPostModal.addEventListener("click", function (event) {
+    if (event.target === newPostModal) {
+        closeModal(newPostModal);
+    }
+});
+
+previewModal.addEventListener("click", function (event) {
+    if (event.target === previewModal) {
+        closeModal(previewModal);
+    }
+});
+
+editProfileModal.addEventListener("click", function (event) {
+    if (event.target === editProfileModal) {
+        closeModal(editProfileModal);
+    }
+});
+
 function handleEditProfileSubmit(evt) {
     evt.preventDefault();
     profileNameEl.textContent = editProfileNameInput.value;
