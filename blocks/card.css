@@ -50,6 +50,7 @@
 }
 
 .card__like-button-active {
+    background-repeat: no-repeat;
     background-image: url(../images/Union.svg);
 }
 

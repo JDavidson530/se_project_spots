@@ -54,11 +54,23 @@ const setEventListners = (formEl) => {
 
 function resetValidation(formEl) {
     const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
+    const buttonElement = formEl.querySelector(".modal__submit-btn");
 
     inputList.forEach((inputEl) => {
         hideInputError(formEl, inputEl);
     });
+
+    toggleButtonState(inputList, buttonElement); // IMPORTANT
 }
+
+editProfileBtn.addEventListener("click", function () {
+    editProfileNameInput.value = profileNameEl.textContent;
+    editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+
+    resetValidation(editProfileForm); //  here
+
+    openModal(editProfileModal);
+});
 
 const enableValidation = () => {
     const formList = document.querySelectorAll(".modal__form");
@@ -66,30 +78,5 @@ const enableValidation = () => {
         setEventListners(formEl);
     });
 };
-
-function handleEscape(evt) {
-    if (evt.key === "Escape") {
-        const activePopup = document.querySelector(".modal_is-opened");
-        closeModal(activePopup);
-    }
-}
-
-function openModal(modal) {
-    modal.classList.add("modal_is-opened");
-    document.addEventListener("keyup", handleEscape);
-}
-
-function closeModal(modal) {
-    modal.classList.remove("modal_is-opened");
-    document.removeEventListener("keyup", handleEscape);
-}
-
-function resetValidation(formEl) {
-    const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
-
-    inputList.forEach((inputEl) => {
-        hideInputError(formEl, inputEl);
-    });
-}
 
 enableValidation();
