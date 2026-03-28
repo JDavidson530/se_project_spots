@@ -170,7 +170,8 @@ function handleAddCardSubmit(evt) {
     cardList.prepend(cardElement);
     addCardFormElement.reset();
 
-    const saveButton = newPostModal.querySelector(".modal__save-btn");
+    const saveButton = newPostModal.querySelector(".modal__submit-btn");
+
     saveButton.disabled = true;
 
     closeModal(newPostModal);

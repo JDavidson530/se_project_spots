@@ -143,7 +143,7 @@
     cursor: pointer;
 }
 .modal__close-btn_type_image-preview {
-    top: 0;
+    top: 0px;
     right: -40px;
 }
 
