@@ -75,6 +75,7 @@
     border: none;
     cursor: pointer;
     src: url(//images/Close\ Icon.svg);
+    opacity: 0.9;
 }
 
 .modal__close-btn:hover {
