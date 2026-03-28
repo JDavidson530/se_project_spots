@@ -74,7 +74,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    background-color: white;
+    src: url(//images/Close\ Icon.svg);
 }
 
 .modal__close-btn:hover {
@@ -161,13 +161,13 @@
     background-color: #ccc;
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 320px) {
     .modal__title {
         font-size: 16px;
     }
 
     .modal__image {
-        max-width: none;
+        max-width: 90vw;
     }
 
     .modal__close-btn_type_image-preview {

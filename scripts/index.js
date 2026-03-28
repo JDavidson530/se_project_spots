@@ -98,22 +98,28 @@ function getCardElement(data) {
     return cardElement;
 }
 
+function handleEscape(evt) {
+    if (evt.key === "Escape") {
+        const openedPopup = document.querySelector(".modal_is-opened");
+        closeModal(openedPopup);
+    }
+}
+
 function openModal(modal) {
     modal.classList.add("modal_is-opened");
+    document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
     modal.classList.remove("modal_is-opened");
+    document.removeEventListener("keydown", handleEscape);
 }
 
 editProfileBtn.addEventListener("click", function () {
     editProfileNameInput.value = profileNameEl.textContent;
     editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+    resetValidation(editProfileForm); // here
     openModal(editProfileModal);
-});
-
-editProfileCloseBtn.addEventListener("click", function () {
-    closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function () {
@@ -157,13 +163,15 @@ function handleEditProfileSubmit(evt) {
 
 function handleAddCardSubmit(evt) {
     evt.preventDefault();
-
     const cardElement = getCardElement({
         name: captionInput.value,
         link: linkInput.value,
     });
     cardList.prepend(cardElement);
     addCardFormElement.reset();
+
+    const saveButton = newPostModal.querySelector(".modal__save-btn");
+    saveButton.disabled = true;
 
     closeModal(newPostModal);
 }
@@ -176,7 +184,9 @@ initialCards.forEach(function (item) {
     cardList.prepend(cardElement);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
-    resetValidation(editProfileForm);
-    closeModal(editProfileModal);
+editProfileBtn.addEventListener("click", function () {
+    editProfileNameInput.value = profileNameEl.textContent;
+    editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+    resetValidation(editProfileForm); // Clean slate every time you open
+    openModal(editProfileModal);
 });
