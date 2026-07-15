@@ -1,3 +1,11 @@
+export const validationConfig = {
+    formSelector: ".modal__form",
+    inputSelector: ".modal__input",
+    submitButtonSelector: "modal__button_disabled",
+    inputErrorClass: "modal__input_type_error",
+    errorClass: "modal__error_visible",
+};
+
 const showInputError = (formEl, inputEl, errorMsg) => {
     const errorMsgID = inputEl.id + "-error";
     const errorMsgEl = formEl.querySelector("#" + errorMsgID);
@@ -72,11 +80,9 @@ editProfileBtn.addEventListener("click", function () {
     openModal(editProfileModal);
 });
 
-const enableValidation = () => {
+export const enableValidation = () => {
     const formList = document.querySelectorAll(".modal__form");
     formList.forEach((formEl) => {
         setEventListners(formEl);
     });
 };
-
-enableValidation();

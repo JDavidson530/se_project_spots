@@ -1,3 +1,5 @@
+import { enableValidation, validationConfig } from "./validation.js";
+
 const initialCards = [
     {
         name: "Golden Gate Bridge",
@@ -191,3 +193,5 @@ editProfileBtn.addEventListener("click", function () {
     resetValidation(editProfileForm); // Clean slate every time you open
     openModal(editProfileModal);
 });
+
+enableValidation(validationConfig);
